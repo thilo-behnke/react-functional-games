@@ -1,0 +1,9 @@
+.Block {
+    height: 1em;
+    width: 1em;
+    transition: all ease-in 200ms;
+}
+
+.Block:hover {
+    transform: scale(1.2);
+}

@@ -1,0 +1,6 @@
+.GameArea-grid {
+    display: grid;
+    grid-template-columns:  repeat(20, 1em);
+    grid-template-rows:  repeat(20, 1em);
+    justify-content: center;
+}
