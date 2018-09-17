@@ -1,19 +1,5 @@
 import { chain, differenceBy, random, range } from 'lodash';
-import {
-    concat,
-    curryRight,
-    flatMap,
-    flatten,
-    groupBy,
-    head,
-    map,
-    pipe,
-    property,
-    reduce,
-    sortBy,
-    sortedUniqBy,
-    toPairs
-} from 'lodash/fp';
+import { flatMap, flatten, groupBy, map, pipe, property, reduce, sortBy, sortedUniqBy, tap, toPairs } from 'lodash/fp';
 import { Color, GameBlock, GameField } from './constants';
 
 export const initGameField = (fieldRows: number) => chain(range(400))
@@ -47,53 +33,74 @@ export const getAdjacent = (block: GameBlock, blocks: GameField): GameField => {
     return inner(block)
 }
 
-export const findGaps = (arr: number[]): number[] =>
-    chain(arr)
-        .reduce((acc, val, i) => acc.previous && Math.abs(acc.previous - val) !== 1
-            ? {previous: val, gaps: [...acc.gaps, i]}
-            : {...acc, previous: val}, {
-                previous: null,
-                gaps: []
-            }
+export const findGaps = (arr: number[]): number[] => {
+    const gaps = chain(arr)
+        .sortBy()
+        .reduce((acc, val, i, arr) =>
+            i !== 0 && Math.abs(arr[i - 1] - val) !== 1
+                ? [...acc, i]
+                : acc, []
         )
-        .values()
-        .last()
         .value()
+    return [...gaps, arr.length]
+}
 
-export const byGaps = (x: number, values: GameField, gaps: number[]) => gaps.length
-    ? gaps.map((val: number, i: number, arr: number[]) => [`${x}-${i}`, values.slice(i === 0 && 0 || arr[i - 1], val)])
-    : [[`${x}-0`, values]] as Array<[string, GameField]>
+export const byGaps = (x: number, values: GameField, gaps: number[]) =>
+    gaps.map((val: number, i: number, arr: number[]) => [`${x}-${i}`, sortBy('pos[1]', values).slice(i === 0 && 0 || arr[i - 1], val)])
 
 export const groupByGaps = pipe(
     groupBy('pos[0]'),
     toPairs,
     map(([x, val]) => [parseInt(x), val]),
     reduce((acc, [x, values]) => {
+        console.log('byGaps', acc)
         const gaps = pipe(
             mapPosY,
             findGaps
         )(values)
+        console.log('gaps', gaps)
         return [
             ...acc, ...byGaps(x, values, gaps)
         ]
-    }, []))
+    }, []), tap(console.log))
 
 export const getMinY = (values: GameField) => chain(values)
     .map(property('pos[1]'))
-    .tap(console.log)
     .sortBy()
     .first()
     .value() as number
 
-export const recalculatePositions = (newField: GameField) => flatMap(([xVal, values]) => {
-    const x = parseInt(xVal)
-    const minY = getMinY(values)
-    return chain(newField)
-        .filter(({pos: [posX, posY]}) => x === posX && minY > posY)
-        .sortBy('pos[1]')
-        .map(b => ({
-            ...b,
-            pos: [x, b.pos[1] + values.length]
-        } as GameBlock))
-        .value()
-})
+export const recalculatePositions = (newField: GameField) => (gaps: any): GameField => {
+    return gaps.reduce((acc: any, [xVal, values]: any, i: number, arr: number) => {
+        const [x, gapIndex] = xVal.split('-').map((x: any) => parseInt(x))
+        const upperBound = getMinY(values)
+        const previousGaps = acc.filter(({pos: [x2, y2]}: GameBlock) => x === x2)
+        const recalc = [
+            ...differenceBy(acc, previousGaps, 'id'),
+            ...chain([...differenceBy(newField, previousGaps, 'id'), ...previousGaps])
+            .filter(({pos: [posX, posY]}) => x === posX && upperBound > posY)
+            .sortBy('pos[1]')
+            .tap(console.log)
+            .map(b => ({
+                ...b,
+                pos: [x, b.pos[1] + values.length]
+            } as GameBlock))
+            .value()
+        ]
+        console.log('recalc', x, recalc)
+        return sortBy('id', recalc)
+    }, [])
+}
+// export const recalculatePositions = (newField: GameField) => flatMap(([xVal, values]) => {
+//     const x = parseInt(xVal)
+//     const minY = getMinY(values)
+//     return chain(newField)
+//         .filter(({pos: [posX, posY]}) => x === posX && minY > posY)
+//         .sortBy('pos[1]')
+//         .tap(console.log)
+//         .map(b => ({
+//             ...b,
+//             pos: [x, b.pos[1] + values.length]
+//         } as GameBlock))
+//         .value()
+// })
