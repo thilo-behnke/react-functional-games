@@ -1,9 +1,9 @@
 .Block {
     height: 1em;
     width: 1em;
-    transition: all ease-in 200ms;
+    transition: transform ease-in 400ms 100ms;
 }
 
 .Block:hover {
-    transform: scale(1.2);
+    transform: scale(1.2) rotateX(180deg);
 }

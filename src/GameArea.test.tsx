@@ -1,5 +1,5 @@
 import { compose, flatten, map, pipe, range, reject } from 'lodash/fp';
-import { byGaps, findGaps, getAdjacent, getMinY, getNeighbours, mapPosY } from './components/GameAreaUtils';
+import { byGaps, findGaps, getAdjacent, getGrid, getMinY, getNeighbours, mapPosY } from './components/GameAreaUtils';
 import { Color, GameBlock, GameField } from './components/constants';
 
 const simpleGameField = (size: number) => pipe(
@@ -14,6 +14,11 @@ const simpleGameField = (size: number) => pipe(
 test('mapY', () => {
     expect(mapPosY([{id: 0, color: Color.YELLOW, pos: [0, 1]}, {id: 0, color: Color.YELLOW, pos: [0, 2]}]))
         .toEqual([1, 2])
+})
+
+test('getGrid', () => {
+    const grid = getGrid(2)
+    expect(grid).toEqual([[1, 1], [1, 2], [2, 1], [2, 2]].map(pos => ({pos})))
 })
 
 test('getNeighbours - corner position (2 neighbours)', () => {
@@ -86,30 +91,31 @@ test('findGaps - empty list should create empty list', () => {
     const gaps = findGaps(arr)
     expect(gaps).toEqual([])
 })
-test('findGaps - list with no gaps should create empty list', () => {
+test('findGaps - list with no gaps should create list containing list length', () => {
     const arr = range(1, 100)
     const gaps = findGaps(arr)
-    expect(gaps).toEqual([])
+    expect(gaps).toEqual([arr.length])
 })
 test('findGaps - 1 gap', () => {
     const remove = [10]
     const arr = reject((x: number) => remove.includes(x), range(0, 99)) as number[]
     const gaps = findGaps(arr)
-    expect(gaps).toEqual(remove)
+    expect(gaps).toEqual([...remove.map((x, i) => x - i), arr.length])
 })
 test('findGaps - 5 gaps', () => {
     const remove = [10, 20, 30]
-    const arr = reject((x: number) => remove.includes(x), range(0, 99)) as number[]
+    const fields = range(0, 99)
+    const arr = reject((x: number) => remove.includes(x), fields) as number[]
     const gaps = findGaps(arr)
-    expect(gaps).toEqual(remove.map((x, i) => x - i))
+    expect(gaps).toEqual([...remove.map((x, i) => x - i), arr.length])
 })
 
-test('byGaps - no gaps should create one group', () => {
+test('byGaps - no gaps should create no group', () => {
     const gameField = simpleGameField(400)
     const column = 5
     const columnValues = gameField.filter(({pos: [x]}) => x === column)
     const groupedByGaps = byGaps(column, columnValues, [])
-    expect(groupedByGaps).toEqual([[`${column}-0`, columnValues]])
+    expect(groupedByGaps).toEqual([])
 })
 test('byGaps - 1 gap should create two groups', () => {
     const gameField = simpleGameField(400)

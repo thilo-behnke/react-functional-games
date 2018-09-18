@@ -2,14 +2,22 @@ import { chain, differenceBy, random, range } from 'lodash';
 import { flatMap, flatten, groupBy, map, pipe, property, reduce, sortBy, sortedUniqBy, tap, toPairs } from 'lodash/fp';
 import { Color, GameBlock, GameField } from './constants';
 
-export const initGameField = (fieldRows: number) => chain(range(400))
+export const initGameField = (fieldRows: number) => chain(range(fieldRows ** 2))
     .map(_ => random(0, 1))
     .map((x, i) => ({
-        color: x === 0 ? Color.BLUE : Color.YELLOW,
+        color: x === 0 ? Color.BLUE : Color.ORANGE,
         id: i,
         pos: [i % fieldRows + 1, Math.floor(i / fieldRows) + 1] as [number, number]
     }))
     .value()
+
+export const getGrid = (fieldRows: number): Array<{pos: [number, number]}> => {
+    const cells = range(1, fieldRows + 1)
+    return pipe(
+        flatMap((x: number) => cells.map((y: number) => [x, y] as [number, number])),
+        map((pos: [number, number]) => ({pos}))
+    )(cells)
+}
 
 export const mapPosY = map(({pos: [_, posY]}) => posY)
 
@@ -42,7 +50,7 @@ export const findGaps = (arr: number[]): number[] => {
                 : acc, []
         )
         .value()
-    return [...gaps, arr.length]
+    return arr.length ? [...gaps, arr.length] : []
 }
 
 export const byGaps = (x: number, values: GameField, gaps: number[]) =>
@@ -53,16 +61,14 @@ export const groupByGaps = pipe(
     toPairs,
     map(([x, val]) => [parseInt(x), val]),
     reduce((acc, [x, values]) => {
-        console.log('byGaps', acc)
         const gaps = pipe(
             mapPosY,
             findGaps
         )(values)
-        console.log('gaps', gaps)
         return [
             ...acc, ...byGaps(x, values, gaps)
         ]
-    }, []), tap(console.log))
+    }, []))
 
 export const getMinY = (values: GameField) => chain(values)
     .map(property('pos[1]'))
@@ -70,6 +76,7 @@ export const getMinY = (values: GameField) => chain(values)
     .first()
     .value() as number
 
+// TODO: Refactor
 export const recalculatePositions = (newField: GameField) => (gaps: any): GameField => {
     return gaps.reduce((acc: any, [xVal, values]: any, i: number, arr: number) => {
         const [x, gapIndex] = xVal.split('-').map((x: any) => parseInt(x))
@@ -80,27 +87,12 @@ export const recalculatePositions = (newField: GameField) => (gaps: any): GameFi
             ...chain([...differenceBy(newField, previousGaps, 'id'), ...previousGaps])
             .filter(({pos: [posX, posY]}) => x === posX && upperBound > posY)
             .sortBy('pos[1]')
-            .tap(console.log)
             .map(b => ({
                 ...b,
                 pos: [x, b.pos[1] + values.length]
             } as GameBlock))
             .value()
         ]
-        console.log('recalc', x, recalc)
         return sortBy('id', recalc)
     }, [])
 }
-// export const recalculatePositions = (newField: GameField) => flatMap(([xVal, values]) => {
-//     const x = parseInt(xVal)
-//     const minY = getMinY(values)
-//     return chain(newField)
-//         .filter(({pos: [posX, posY]}) => x === posX && minY > posY)
-//         .sortBy('pos[1]')
-//         .tap(console.log)
-//         .map(b => ({
-//             ...b,
-//             pos: [x, b.pos[1] + values.length]
-//         } as GameBlock))
-//         .value()
-// })
