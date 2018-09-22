@@ -1,5 +1,27 @@
 import { chain, differenceBy, random, range } from 'lodash';
-import { flatMap, flatten, groupBy, map, pipe, property, reduce, sortBy, sortedUniqBy, tap, toPairs } from 'lodash/fp';
+import {
+    constant,
+    curry,
+    fill,
+    filter,
+    flatMap,
+    flatten,
+    fromPairs,
+    groupBy,
+    map,
+    pipe,
+    property,
+    reject,
+    sortBy,
+    sortedUniqBy,
+    tap,
+    times,
+    toPairs,
+    zip
+} from 'lodash/fp';
+import { inc, repeat } from 'ramda';
+
+const reduce = require('lodash/fp/reduce').convert({'cap': false});
 import { Color, GameBlock, GameField } from './constants';
 
 export const initGameField = (fieldRows: number) => chain(range(fieldRows ** 2))
@@ -11,7 +33,7 @@ export const initGameField = (fieldRows: number) => chain(range(fieldRows ** 2))
     }))
     .value()
 
-export const getGrid = (fieldRows: number): Array<{pos: [number, number]}> => {
+export const getGrid = (fieldRows: number): Array<{ pos: [number, number] }> => {
     const cells = range(1, fieldRows + 1)
     return pipe(
         flatMap((x: number) => cells.map((y: number) => [x, y] as [number, number])),
@@ -28,18 +50,31 @@ export const getAdjacent = (block: GameBlock, blocks: GameField): GameField => {
     let visited = [] as GameField
     const inner = (block: GameBlock): GameField => {
         const neighbours = getNeighbours(block, differenceBy(blocks, visited, 'id'))
-        const relevantNeighbours = neighbours.filter(({color}) => color === block.color)
-        visited = [...visited, ...neighbours]
+        const relevantNeighbours = neighbours.filter(({color}) => color === block.color || color === Color.RED || block.color === Color.RED)
+        const bridgeNeighbours = relevantNeighbours.filter(({color}) => color === Color.RED)
+        // Problem: - origin block must be removed from bridgeneighbours, some other neighbour is not checked
+        visited = differenceBy([...visited, ...neighbours], bridgeNeighbours.map((neighbour: GameBlock) => inner(neighbour)), 'id')
         const result = [
-            ...relevantNeighbours, ...pipe(
+            ...relevantNeighbours,
+            ...bridgeNeighbours,
+            ...pipe(
                 map((neighbour: GameBlock) => inner(neighbour)),
                 flatten
-            )(relevantNeighbours)
+            )([...bridgeNeighbours,...relevantNeighbours])
         ]
         return sortedUniqBy('id', sortBy('id', result))
     }
     return inner(block)
 }
+
+export const findGapsRange = curry(
+    (min: number, max: number, arr: number[]): number[] => pipe(
+        map(([i, x]: [number, boolean]) => [i, arr.includes(i) || x] as [number, boolean]),
+        reject(([_, x]: [number, boolean]) => x),
+        map(property('[0]')),
+    )(zip(range(1, max + 1), repeat(false, max)))
+)
+
 
 export const findGaps = (arr: number[]): number[] => {
     const gaps = chain(arr)
@@ -60,7 +95,7 @@ export const groupByGaps = pipe(
     groupBy('pos[0]'),
     toPairs,
     map(([x, val]) => [parseInt(x), val]),
-    reduce((acc, [x, values]) => {
+    reduce((acc: number[], [x, values]: [number, GameField]) => {
         const gaps = pipe(
             mapPosY,
             findGaps
@@ -85,13 +120,13 @@ export const recalculatePositions = (newField: GameField) => (gaps: any): GameFi
         const recalc = [
             ...differenceBy(acc, previousGaps, 'id'),
             ...chain([...differenceBy(newField, previousGaps, 'id'), ...previousGaps])
-            .filter(({pos: [posX, posY]}) => x === posX && upperBound > posY)
-            .sortBy('pos[1]')
-            .map(b => ({
-                ...b,
-                pos: [x, b.pos[1] + values.length]
-            } as GameBlock))
-            .value()
+                .filter(({pos: [posX, posY]}) => x === posX && upperBound > posY)
+                .sortBy('pos[1]')
+                .map(b => ({
+                    ...b,
+                    pos: [x, b.pos[1] + values.length]
+                } as GameBlock))
+                .value()
         ]
         return sortBy('id', recalc)
     }, [])

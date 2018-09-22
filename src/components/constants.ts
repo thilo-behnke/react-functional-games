@@ -9,5 +9,10 @@ export enum Color {
     YELLOW = 'yellow'
 }
 
+export enum GameMode {
+    NORMAL = 'NORMAL',
+    BRIDGE = 'BRIDGE'
+}
+
 export type GameBlock = { color: Color, id: number, pos: [number, number], selected?: boolean }
 export type GameField = Array<GameBlock>

@@ -12,6 +12,7 @@ const Block = ({color, gridX, gridY, onClick, onMouseOver, onMouseLeave, selecte
     <span
         {...{onClick, onMouseOver, onMouseLeave}}
         className='Block'
-        style={{backgroundColor: color, gridRowStart: gridY, gridColumnStart: gridX, ...(selected && {transform: 'scale(1.2em)'} || {})}}
+        style={{backgroundColor: color, gridRowStart: gridY, gridColumnStart: gridX,
+            ...(selected && {animation: 'pulsate 1.2s linear 400ms infinite', boxShadow: '0 0 0.6em lightgrey'} || {})}}
     />
 export default Block

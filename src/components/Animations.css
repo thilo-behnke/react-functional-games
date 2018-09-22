@@ -3,7 +3,7 @@
     to {grid-column-gap: 0}
 }
 
-@keyframes pulsate {
+@keyframes growOut {
     from {
         transform: scale(1);
         box-shadow: 0 0 grey;
@@ -11,6 +11,15 @@
     to {
         transform: scale(1.5) translateY(-0.6em);
         box-shadow: 0 0.4em 0 hsla(15, 100%, 32%, 1);
+    }
+}
+
+@keyframes pulsate {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
     }
 }
 

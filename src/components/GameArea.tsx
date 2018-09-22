@@ -1,16 +1,23 @@
 import * as React from 'react';
-import { differenceBy } from 'lodash';
+import { differenceBy, without } from 'lodash';
 import { map, pipe, uniqBy } from 'lodash/fp';
 import './GameArea.css';
 import { getAdjacent, groupByGaps, initGameField, recalculatePositions } from './GameAreaUtils';
-import { FIELD_ROWS, GameBlock, GameField } from './constants';
+import { Color, FIELD_ROWS, GameBlock, GameField, GameMode } from './constants';
 import Block from './Block';
 
 export const calcScore = (n: number) => n * 5 * Math.floor(n / 10 + 1) ** 2
 export const calcRemove = (block: GameBlock, blocks: GameField) => uniqBy('id', [block, ...getAdjacent(block, blocks)])
 
-class GameArea extends React.Component<{ updateScore: (score: number) => void, plusScore: (score: number) => void }, { field: GameField }> {
-    constructor(props: { updateScore: (score: number) => void, plusScore: (score: number) => void }) {
+export interface GameAreaProps {
+    updateScore: (score: number) => void,
+    plusScore: (score: number) => void,
+    decrementBridges: () => void,
+    mode: GameMode
+}
+
+class GameArea extends React.Component<GameAreaProps, { field: GameField }> {
+    constructor(props: GameAreaProps) {
         super(props)
         this.state = {field: []}
     }
@@ -22,7 +29,7 @@ class GameArea extends React.Component<{ updateScore: (score: number) => void, p
 
     public render() {
 
-        const {updateScore, plusScore} = this.props
+        const {updateScore, plusScore, decrementBridges, mode} = this.props
         const blocks = this.state && this.state.field
 
         return <div className="GameArea-grid">
@@ -35,25 +42,62 @@ class GameArea extends React.Component<{ updateScore: (score: number) => void, p
                               selected={selected}
                               onMouseOver={() => {
                                   const adjacent = calcRemove(block, blocks)
-                                  plusScore(adjacent.length)
-                                  this.setState({field: blocks.map(block => map('id', adjacent).includes(block.id) ? {...block, selected: true} : block)})
+                                  switch (mode) {
+                                      case GameMode.NORMAL:
+                                          plusScore(adjacent.length)
+                                          this.setState({
+                                              field: blocks.map(block => map('id', adjacent).includes(block.id) ? {
+                                                  ...block,
+                                                  selected: true
+                                              } : {...block, selected: false})
+                                          })
+                                          break
+                                      case GameMode.BRIDGE:
+                                          break
+                                  }
+
                               }}
-                              onMouseLeave={() => plusScore(null)}
+                              onMouseLeave={() => {
+                                  switch (mode) {
+                                      case GameMode.NORMAL:
+                                          const adjacent = calcRemove(block, blocks)
+                                          plusScore(null)
+                                          this.setState({
+                                              field: blocks.map(block => map('id', adjacent).includes(block.id) ? {
+                                                  ...block,
+                                                  selected: false
+                                              } : block)
+                                          })
+                                          break
+                                      case GameMode.BRIDGE:
+                                          break
+                                  }
+                              }}
                               onClick={
                                   () => {
-                                      const toRemove = calcRemove(block, blocks)
-                                      const newField = differenceBy(blocks, toRemove, 'id')
-                                      const updatedGridValues = pipe(
-                                          groupByGaps,
-                                          recalculatePositions(newField),
-                                      )(toRemove)
-                                      const field = [
-                                          ...updatedGridValues,
-                                          ...differenceBy(newField, updatedGridValues, 'id'),
-                                      ]
-                                      this.setState({field})
-                                      updateScore(calcScore(toRemove.length))
-                                      plusScore(null)
+                                      switch (mode) {
+                                          case GameMode.NORMAL:
+                                              const toRemove = calcRemove(block, blocks)
+                                              const newField = differenceBy(blocks, toRemove, 'id')
+                                              const updatedGridValues = pipe(
+                                                  groupByGaps,
+                                                  recalculatePositions(newField),
+                                              )(toRemove)
+                                              const field = [
+                                                  ...updatedGridValues,
+                                                  ...differenceBy(newField, updatedGridValues, 'id'),
+                                              ]
+                                              this.setState({field})
+                                              updateScore(calcScore(toRemove.length))
+                                              plusScore(null)
+                                              break
+                                          case GameMode.BRIDGE:
+                                              this.setState({
+                                                  field: [...without(blocks, block), {...block, color: Color.RED}]
+                                              })
+                                              decrementBridges()
+                                              break
+                                      }
                                   }
                               }
                 />

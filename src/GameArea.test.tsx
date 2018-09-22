@@ -1,5 +1,14 @@
 import { compose, flatten, map, pipe, range, reject } from 'lodash/fp';
-import { byGaps, findGaps, getAdjacent, getGrid, getMinY, getNeighbours, mapPosY } from './components/GameAreaUtils';
+import {
+    byGaps,
+    findGaps,
+    findGapsRange,
+    getAdjacent,
+    getGrid,
+    getMinY,
+    getNeighbours,
+    mapPosY
+} from './components/GameAreaUtils';
 import { Color, GameBlock, GameField } from './components/constants';
 
 const simpleGameField = (size: number) => pipe(
@@ -108,6 +117,12 @@ test('findGaps - 5 gaps', () => {
     const arr = reject((x: number) => remove.includes(x), fields) as number[]
     const gaps = findGaps(arr)
     expect(gaps).toEqual([...remove.map((x, i) => x - i), arr.length])
+})
+
+test.only('findGaps', () => {
+    const arr = [1,2,4,5]
+    const gaps = findGapsRange(1, 5)
+    expect(gaps(arr)).toEqual([3])
 })
 
 test('byGaps - no gaps should create no group', () => {

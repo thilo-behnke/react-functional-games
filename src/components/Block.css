@@ -4,6 +4,8 @@
     transition: transform ease-in 400ms 100ms;
 }
 
-.Block:hover {
-    transform: scale(1.2) rotateX(180deg);
-}
+/*.Block:hover {*/
+    /*box-shadow: 0 0 0.6em lightgrey;*/
+    /*!*transform: rotateX(180deg);*!*/
+    /*animation: pulsate 1.2s linear 400ms infinite;*/
+/*}*/
