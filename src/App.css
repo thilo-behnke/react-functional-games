@@ -1,34 +1,55 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.Main-grid {
-  margin-top: 2em;
-  display: grid;
-  grid-template: 'main side' auto / 4fr 1fr;
+.MainGrid {
+    margin-top: 2em;
+    display: grid;
+    grid-template: 'main side' auto / 4fr 1fr;
+}
+
+.SideGrid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+}
+
+.ScoreArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.GameTitle {
+    font-size: 2em;
+    margin-bottom: 0.5em;
 }

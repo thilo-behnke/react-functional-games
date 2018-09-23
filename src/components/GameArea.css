@@ -9,3 +9,7 @@
     justify-content: center;
     animation: 1.2s fall cubic-bezier(.86,0,.07,1) 0.4s both;
 }
+
+.GameArea-grid--disabled {
+    filter: grayscale(100%);
+}

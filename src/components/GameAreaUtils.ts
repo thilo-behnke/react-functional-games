@@ -1,7 +1,10 @@
 import { chain, differenceBy, random, range } from 'lodash';
 import {
+    concat,
     constant,
     curry,
+    curryRight,
+    differenceBy as fdifferenceBy,
     fill,
     filter,
     flatMap,
@@ -16,13 +19,19 @@ import {
     sortedUniqBy,
     tap,
     times,
-    toPairs,
+    toPairs, uniqBy,
     zip
 } from 'lodash/fp';
-import { inc, repeat } from 'ramda';
+import { compose, differenceWith, inc, repeat, pipe as rpipe } from 'ramda';
 
 const reduce = require('lodash/fp/reduce').convert({'cap': false});
 import { Color, GameBlock, GameField } from './constants';
+import { formatNumber } from './GeneralUtils';
+
+export const formatNumberD = curryRight(formatNumber)('.')
+
+export const differenceById = differenceWith((x: GameBlock, y: GameBlock) => x.id === y.id) as any
+export const differenceByIdRight = curryRight(differenceWith((x: GameBlock, y: GameBlock) => x.id === y.id) as any)
 
 export const initGameField = (fieldRows: number) => chain(range(fieldRows ** 2))
     .map(_ => random(0, 1))
@@ -43,24 +52,28 @@ export const getGrid = (fieldRows: number): Array<{ pos: [number, number] }> => 
 
 export const mapPosY = map(({pos: [_, posY]}) => posY)
 
-export const getNeighbours = ({pos: [x, y]}: GameBlock, blocks: GameField) =>
-    blocks.filter(({pos: [posX, posY]}) => posX === x && Math.abs(posY - y) === 1 || posY === y && Math.abs(posX - x) === 1)
+export const getNeighbours = curry(
+    ({pos: [x, y]}: GameBlock, blocks: GameField) =>
+        blocks.filter(({pos: [posX, posY]}) => posX === x && Math.abs(posY - y) === 1 || posY === y && Math.abs(posX - x) === 1)
+)
 
 export const getAdjacent = (block: GameBlock, blocks: GameField): GameField => {
     let visited = [] as GameField
     const inner = (block: GameBlock): GameField => {
-        const neighbours = getNeighbours(block, differenceBy(blocks, visited, 'id'))
-        const relevantNeighbours = neighbours.filter(({color}) => color === block.color || color === Color.RED || block.color === Color.RED)
-        const bridgeNeighbours = relevantNeighbours.filter(({color}) => color === Color.RED)
-        // Problem: - origin block must be removed from bridgeneighbours, some other neighbour is not checked
-        visited = differenceBy([...visited, ...neighbours], bridgeNeighbours.map((neighbour: GameBlock) => inner(neighbour)), 'id')
+        const neighbours = compose(
+            getNeighbours(block),
+            differenceById(blocks)
+        )(visited)
+        const relevantNeighbours = filter((({color}) => color === block.color), neighbours)
+        const bridgeNeighbours = filter(({color}) => color === Color.RED || block.color === Color.RED, neighbours)
+        visited = differenceById(concat(visited, neighbours), map((block: GameBlock) => getNeighbours(block, blocks), bridgeNeighbours))
         const result = [
             ...relevantNeighbours,
             ...bridgeNeighbours,
             ...pipe(
                 map((neighbour: GameBlock) => inner(neighbour)),
                 flatten
-            )([...bridgeNeighbours,...relevantNeighbours])
+            )([...bridgeNeighbours, ...relevantNeighbours])
         ]
         return sortedUniqBy('id', sortBy('id', result))
     }
@@ -131,3 +144,7 @@ export const recalculatePositions = (newField: GameField) => (gaps: any): GameFi
         return sortBy('id', recalc)
     }, [])
 }
+
+export const calcMultiplier = (n: number) => Math.floor(n / 10 + 1) ** 2
+export const calcScore = (n: number) => n * 5 * calcMultiplier(n)
+export const calcRemove = (block: GameBlock, blocks: GameField) => uniqBy('id', [block, ...getAdjacent(block, blocks)])

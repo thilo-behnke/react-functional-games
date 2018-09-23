@@ -9,6 +9,12 @@ export enum Color {
     YELLOW = 'yellow'
 }
 
+export enum GameState {
+    PLAYING = 'PLAYING',
+    LOST = 'LOST',
+    WON = 'WON'
+}
+
 export enum GameMode {
     NORMAL = 'NORMAL',
     BRIDGE = 'BRIDGE'

@@ -16,6 +16,7 @@
     "build": "react-scripts-ts build",
     "test": "jest",
     "test-watch": "jest --watchAll",
+    "test-coverage": "jest --coverage",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {

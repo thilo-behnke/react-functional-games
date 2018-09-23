@@ -1,12 +1,11 @@
 @import './Animations.css';
 
 .PlusScore {
-    display: inline-block;
-    width: auto;
+    justify-self: stretch;
     color: white;
     padding: 0.4em;
     margin-top: 2em;
     background-color: hsla(15, 100%, 48%, 1);
     border-radius: 0.5em;
-    animation: growOut 1.5s ease-in-out 0.5s infinite;
+    animation: goUp 800ms ease-in-out 300ms infinite;
 }

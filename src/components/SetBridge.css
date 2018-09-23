@@ -1,0 +1,13 @@
+
+.SetBridge {
+    height: 3em;
+    width: 10em;
+    color: white;
+    font-weight: bold;
+}
+.SetBridge--active {
+    background-color: crimson;
+}
+.SetBridge--inactive {
+    background-color: rebeccapurple;
+}

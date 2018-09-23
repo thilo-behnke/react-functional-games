@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { formatNumberD } from './GameAreaUtils';
 
-const Score = (props: { score: number }) => <div>{ props.score }</div>
+const Score = ({score}: { score: number }) => <div>Score: {formatNumberD(score)}</div>
 export default Score

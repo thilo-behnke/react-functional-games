@@ -14,6 +14,16 @@
     }
 }
 
+@keyframes goUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1em);
+    }
+
+}
+
 @keyframes pulsate {
     0%, 100% {
         transform: scale(1);

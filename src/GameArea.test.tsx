@@ -1,6 +1,7 @@
 import { compose, flatten, map, pipe, range, reject } from 'lodash/fp';
 import {
     byGaps,
+    differenceById,
     findGaps,
     findGapsRange,
     getAdjacent,
@@ -19,6 +20,13 @@ const simpleGameField = (size: number) => pipe(
         pos: [val % Math.sqrt(size), Math.floor(val / Math.sqrt(size))]
     }) as GameBlock)
 )(0, size - 1) as GameField
+
+test('differenceById', () => {
+    const field1 = [{id: 1, color: Color.YELLOW, pos: [0, 1]}, {id: 2, color: Color.YELLOW, pos: [0, 1]}]
+    const field2 = [{id: 2, color: Color.YELLOW, pos: [0, 1]}]
+    const difference = differenceById(field1, field2)
+    expect(difference).toEqual([{id: 1, color: Color.YELLOW, pos: [0, 1]}])
+})
 
 test('mapY', () => {
     expect(mapPosY([{id: 0, color: Color.YELLOW, pos: [0, 1]}, {id: 0, color: Color.YELLOW, pos: [0, 2]}]))
@@ -119,7 +127,7 @@ test('findGaps - 5 gaps', () => {
     expect(gaps).toEqual([...remove.map((x, i) => x - i), arr.length])
 })
 
-test.only('findGaps', () => {
+test('findGaps', () => {
     const arr = [1,2,4,5]
     const gaps = findGapsRange(1, 5)
     expect(gaps(arr)).toEqual([3])
