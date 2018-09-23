@@ -7,9 +7,11 @@ import {
     getAdjacent,
     getGrid,
     getMinY,
-    getNeighbours,
+    getNeighbours, initGameField,
     mapPosY
 } from './components/GameAreaUtils';
+import * as _ from 'lodash';
+import { stub } from 'sinon';
 import { Color, GameBlock, GameField } from './components/constants';
 
 const simpleGameField = (size: number) => pipe(
@@ -20,6 +22,20 @@ const simpleGameField = (size: number) => pipe(
         pos: [val % Math.sqrt(size), Math.floor(val / Math.sqrt(size))]
     }) as GameBlock)
 )(0, size - 1) as GameField
+
+test('initGameField', () => {
+    const randomStub = stub(_, 'random').returns(1)
+    const rows = 2
+    const columns = 3
+    const field = initGameField(rows, columns)
+    expect(field).toEqual([
+        {color: 'orange', id: 1, pos: [1, 2]},
+        {color: 'orange', id: 2, pos: [2, 1]},
+        {color: 'orange', id: 3, pos: [2, 2]},
+        {color: 'orange', id: 4, pos: [3, 1]},
+        {color: 'orange', id: 5, pos: [3, 2]}
+    ])
+})
 
 test('differenceById', () => {
     const field1 = [{id: 1, color: Color.YELLOW, pos: [0, 1]}, {id: 2, color: Color.YELLOW, pos: [0, 1]}]
@@ -128,7 +144,7 @@ test('findGaps - 5 gaps', () => {
 })
 
 test('findGaps', () => {
-    const arr = [1,2,4,5]
+    const arr = [1, 2, 4, 5]
     const gaps = findGapsRange(1, 5)
     expect(gaps(arr)).toEqual([3])
 })

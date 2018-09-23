@@ -1,13 +1,12 @@
 @import './Animations.css';
 
 .GameArea-grid {
-    width: 50em;
     justify-self: center;
     display: grid;
-    grid-template-columns:  repeat(20, 1em);
-    grid-template-rows:  repeat(20, 1em);
+    grid-template-columns: repeat(80, 1em);
+    grid-template-rows: repeat(20, 1em);
     justify-content: center;
-    animation: 1.2s fall cubic-bezier(.86,0,.07,1) 0.4s both;
+    animation: 1.2s fall cubic-bezier(.86, 0, .07, 1) 0.4s both;
 }
 
 .GameArea-grid--disabled {

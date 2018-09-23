@@ -6,7 +6,7 @@ import GameArea from './components/GameArea';
 import Score from './components/Score';
 import ScoreCalc from './components/ScoreCalc';
 import SetBridge from './components/SetBridge';
-import { FIELD_ROWS, GameField, GameMode, GameState } from './components/constants';
+import { FIELD_COLUMNS, FIELD_ROWS, GameField, GameMode, GameState } from './components/constants';
 import { Turns } from './components/Turns';
 import { Output } from './components/Output';
 import { Button } from './components/Button';
@@ -31,7 +31,7 @@ const initialState = {
     bridges: 1,
     turns: 20,
     state: GameState.PLAYING,
-    field: initGameField(FIELD_ROWS)
+    field: initGameField(FIELD_ROWS, FIELD_COLUMNS)
 } as AppState
 
 class App extends React.Component<{}, AppState> {

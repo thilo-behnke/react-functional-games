@@ -11,10 +11,12 @@ import {
     flatten,
     fromPairs,
     groupBy,
+    head,
     map,
     pipe,
     property,
     reject,
+    slice,
     sortBy,
     sortedUniqBy,
     tap,
@@ -33,14 +35,15 @@ export const formatNumberD = curryRight(formatNumber)('.')
 export const differenceById = differenceWith((x: GameBlock, y: GameBlock) => x.id === y.id) as any
 export const differenceByIdRight = curryRight(differenceWith((x: GameBlock, y: GameBlock) => x.id === y.id) as any)
 
-export const initGameField = (fieldRows: number) => chain(range(fieldRows ** 2))
-    .map(_ => random(0, 1))
-    .map((x, i) => ({
-        color: x === 0 ? Color.BLUE : Color.ORANGE,
-        id: i,
-        pos: [i % fieldRows + 1, Math.floor(i / fieldRows) + 1] as [number, number]
-    }))
-    .value()
+export const initGameField = (fieldRows: number, fieldColumns: number) =>
+    pipe(
+        map(i => [i, random(0, 1)] as [number, number]),
+        map(([i, x]: [number, number]) => ({
+            color: x === 0 ? Color.BLUE : Color.ORANGE,
+            id: i,
+            pos: [Math.floor(i / fieldRows) + 1, i % fieldRows + 1] as [number, number]
+        }))
+    )(range(1, fieldRows * fieldColumns))
 
 export const getGrid = (fieldRows: number): Array<{ pos: [number, number] }> => {
     const cells = range(1, fieldRows + 1)
@@ -82,27 +85,35 @@ export const getAdjacent = (block: GameBlock, blocks: GameField): GameField => {
 
 export const findGapsRange = curry(
     (min: number, max: number, arr: number[]): number[] => pipe(
-        map(([i, x]: [number, boolean]) => [i, arr.includes(i) || x] as [number, boolean]),
-        reject(([_, x]: [number, boolean]) => x),
+        map(([i, x]) => [i, arr.includes(i) || x]),
+        reject(([i, x]: [number, boolean]) => x),
         map(property('[0]')),
     )(zip(range(1, max + 1), repeat(false, max)))
 )
 
-
 export const findGaps = (arr: number[]): number[] => {
-    const gaps = chain(arr)
-        .sortBy()
-        .reduce((acc, val, i, arr) =>
+    const gaps = pipe(
+        sortBy(''),
+        reduce((acc: number[], val: number, i: number, arr: number[]) =>
             i !== 0 && Math.abs(arr[i - 1] - val) !== 1
                 ? [...acc, i]
                 : acc, []
         )
-        .value()
+    )(arr) as number[]
     return arr.length ? [...gaps, arr.length] : []
 }
 
 export const byGaps = (x: number, values: GameField, gaps: number[]) =>
-    gaps.map((val: number, i: number, arr: number[]) => [`${x}-${i}`, sortBy('pos[1]', values).slice(i === 0 && 0 || arr[i - 1], val)])
+    gaps.map((val: number, i: number, arr: number[]) => {
+        return [
+            `${x}-${i}`,
+            pipe(
+                sortBy('pos[1]'),
+                slice(i === 0 && 0 || arr[i - 1], val)
+            )(values)
+        ]
+    }, gaps)
+
 
 export const groupByGaps = pipe(
     groupBy('pos[0]'),
@@ -118,31 +129,36 @@ export const groupByGaps = pipe(
         ]
     }, []))
 
-export const getMinY = (values: GameField) => chain(values)
-    .map(property('pos[1]'))
-    .sortBy()
-    .first()
-    .value() as number
+export const getMinY = pipe(
+    map(property('pos[1]')),
+    sortBy('') as any,
+    head
+) as (blocks: GameField) => number
 
-// TODO: Refactor
 export const recalculatePositions = (newField: GameField) => (gaps: any): GameField => {
-    return gaps.reduce((acc: any, [xVal, values]: any, i: number, arr: number) => {
+    const filterAbove = (x: number, upperBound: number) => filter(({pos: [posX, posY]}: GameBlock) => x === posX && upperBound > posY)
+    const sortByY = sortBy('pos[1]')
+    const sortById = sortBy('id')
+    const decrementXByLength = (x: number, xDiff: number) => map((b: GameBlock) => ({
+        ...b,
+        pos: [x, b.pos[1] + xDiff],
+    }))
+    return reduce((acc: any, [xVal, values]: any, i: number, arr: number) => {
         const [x, gapIndex] = xVal.split('-').map((x: any) => parseInt(x))
         const upperBound = getMinY(values)
-        const previousGaps = acc.filter(({pos: [x2, y2]}: GameBlock) => x === x2)
-        const recalc = [
-            ...differenceBy(acc, previousGaps, 'id'),
-            ...chain([...differenceBy(newField, previousGaps, 'id'), ...previousGaps])
-                .filter(({pos: [posX, posY]}) => x === posX && upperBound > posY)
-                .sortBy('pos[1]')
-                .map(b => ({
-                    ...b,
-                    pos: [x, b.pos[1] + values.length]
-                } as GameBlock))
-                .value()
-        ]
-        return sortBy('id', recalc)
-    }, [])
+        const previousGaps = filter(({pos: [x2, y2]}: GameBlock) => x === x2, acc)
+        const newPositions = (pipe(
+            concat,
+            filterAbove(x, upperBound),
+            sortByY as any,
+            decrementXByLength(x, values.length),
+            sortById as any
+        ) as (field1: GameField, field2: GameField) => GameField)(differenceById(newField, previousGaps), previousGaps)
+        return pipe(
+            concat(differenceById(acc, previousGaps)),
+            sortById as any
+        )(newPositions) as GameField
+    }, [], gaps)
 }
 
 export const calcMultiplier = (n: number) => Math.floor(n / 10 + 1) ** 2

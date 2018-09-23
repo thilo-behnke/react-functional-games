@@ -1,6 +1,6 @@
 import { formatNumber } from './components/GeneralUtils';
 
-test.only('formatNumber', () => {
+test('formatNumber', () => {
     const num = 1000000
     const del = '.'
     const formatted = formatNumber(num, del)

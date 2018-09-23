@@ -2,25 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d740ea6c-b3c6-4640-b95e-e74ea5d105c4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GeneralUtils.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GeneralUtils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Output.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SetBridge.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Turns.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameArea.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameArea.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Animations.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Animations.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GeneralUtils.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeneralUtils.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Block.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GameArea.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameArea.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GameArea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameArea.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GameAreaUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameAreaUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Score.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Score.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Score.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Score.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ScoreCalc.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ScoreCalc.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SetBridge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SetBridge.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/constants.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -80,8 +71,8 @@
       <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="181">
+              <caret line="33" column="50" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="50" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -89,11 +80,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="constants.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/constants.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+            <state relative-caret-position="17">
+              <caret line="1" column="31" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameAreaUtils.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/GameAreaUtils.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#60#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameArea.test.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameArea.test.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="163" column="57" selection-start-line="163" selection-start-column="57" selection-end-line="163" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#71#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,8 +116,20 @@
       <file leaf-file-name="GameArea.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/GameArea.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="64" column="53" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="53" />
+            <state relative-caret-position="50">
+              <caret line="76" column="63" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="69" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Block.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Block.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -113,26 +140,8 @@
       <file leaf-file-name="GameArea.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/GameArea.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Button.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Button.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Output.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Output.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="84" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
+            <state relative-caret-position="204">
+              <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -150,14 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Color</find>
-      <find>reduce</find>
-      <find>con</find>
-      <find>tap</find>
-      <find>type</find>
-      <find>pipe</find>
-      <find>map</find>
-      <find>previousGaps</find>
       <find>calcScore</find>
       <find>GRID</find>
       <find>empty list</find>
@@ -170,7 +171,6 @@
       <find>findgaps</find>
       <find>differenceBy</find>
       <find>d</find>
-      <find>test.only</find>
       <find>conso</find>
       <find>pluS</find>
       <find>test</find>
@@ -180,6 +180,15 @@
       <find>turns</find>
       <find>updatefield</find>
       <find>updateField</find>
+      <find>simplegame</find>
+      <find>initGame</find>
+      <find>range</find>
+      <find>difference</find>
+      <find>test.only</find>
+      <find>getM</find>
+      <find>bygaps</find>
+      <find>map</find>
+      <find>slice</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,30 +215,30 @@
         <option value="$PROJECT_DIR$/src/components/ScoreCalc.ts" />
         <option value="$PROJECT_DIR$/src/components/SetBridge.tsx.ts" />
         <option value="$PROJECT_DIR$/src/components/Block.css" />
-        <option value="$PROJECT_DIR$/src/components/Block.tsx" />
         <option value="$PROJECT_DIR$/src/components/SetBridge.tsx" />
         <option value="$PROJECT_DIR$/src/components/SetBridge.css" />
-        <option value="$PROJECT_DIR$/src/GameArea.test.tsx" />
         <option value="$PROJECT_DIR$/src/components/Animations.css" />
         <option value="$PROJECT_DIR$/src/components/Score.css" />
-        <option value="$PROJECT_DIR$/src/GeneralUtils.test.ts" />
         <option value="$PROJECT_DIR$/src/components/ScoreCalc.tsx" />
         <option value="$PROJECT_DIR$/src/components/GeneralUtils.ts" />
         <option value="$PROJECT_DIR$/src/components/Turns.ts" />
         <option value="$PROJECT_DIR$/src/components/Turns.tsx" />
-        <option value="$PROJECT_DIR$/src/components/GameAreaUtils.ts" />
         <option value="$PROJECT_DIR$/src/components/GameState.tsx.ts" />
         <option value="$PROJECT_DIR$/src/components/GameState.tsx" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/components/Output.tsx" />
         <option value="$PROJECT_DIR$/src/components/Button.ts" />
         <option value="$PROJECT_DIR$/src/components/Button.tsx" />
-        <option value="$PROJECT_DIR$/src/components/GameArea.css" />
-        <option value="$PROJECT_DIR$/src/components/GameArea.tsx" />
-        <option value="$PROJECT_DIR$/src/components/constants.ts" />
         <option value="$PROJECT_DIR$/src/components/Score.tsx" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/components/constants.ts" />
+        <option value="$PROJECT_DIR$/src/GeneralUtils.test.ts" />
+        <option value="$PROJECT_DIR$/src/components/GameArea.css" />
+        <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/src/components/GameArea.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Block.tsx" />
+        <option value="$PROJECT_DIR$/src/GameArea.test.tsx" />
+        <option value="$PROJECT_DIR$/src/components/GameAreaUtils.ts" />
       </list>
     </option>
   </component>
@@ -260,6 +269,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -267,11 +277,15 @@
               <item name="css-games" type="b2602c69:ProjectViewProjectNode" />
               <item name="css-games" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="css-games" type="b2602c69:ProjectViewProjectNode" />
+              <item name="css-games" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,7 +380,8 @@
       <workItem from="1537305501726" duration="4833000" />
       <workItem from="1537548998351" duration="6271000" />
       <workItem from="1537644968498" duration="5579000" />
-      <workItem from="1537696236605" duration="14581000" />
+      <workItem from="1537696236605" duration="14722000" />
+      <workItem from="1537725069824" duration="10884000" />
     </task>
     <servers />
   </component>
@@ -382,7 +397,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98728000" />
+    <option name="totallyTimeSpent" value="109753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -393,11 +408,12 @@
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3267974" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.47276688" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32897604" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Bucklescript" order="8" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
@@ -407,7 +423,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -662,37 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GeneralUtils.test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameArea.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="23" column="4" selection-start-line="23" selection-end-line="23" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/lodash/fp.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="422" column="8" selection-start-line="422" selection-start-column="8" selection-end-line="422" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="51" column="10" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Turns.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -707,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Output.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="84" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Button.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -721,55 +698,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/constants.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameArea.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Block.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ScoreCalc.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameAreaUtils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="149" column="119" selection-start-line="149" selection-start-column="119" selection-end-line="149" selection-end-column="119" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-            <element signature="e#516#574#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameArea.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="64" column="53" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -783,20 +715,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="51" column="10" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Output.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="84" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GeneralUtils.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/constants.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="181">
+          <caret line="33" column="50" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="50" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/components/Block.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        <state relative-caret-position="187">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/lodash/fp.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="519" column="8" selection-start-line="519" selection-start-column="8" selection-end-line="519" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GameArea.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="76" column="63" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GameArea.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameArea.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="163" column="57" selection-start-line="163" selection-start-column="57" selection-end-line="163" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GameAreaUtils.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

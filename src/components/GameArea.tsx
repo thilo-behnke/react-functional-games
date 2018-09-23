@@ -42,7 +42,7 @@ class GameArea extends React.Component<GameAreaProps, {}> {
                               gridX={x}
                               gridY={y}
                               selected={selected}
-                              onMouseOver={enabled && (() => {
+                              onMouseEnter={enabled && (() => {
                                   const adjacent = calcRemove(block, blocks)
                                   switch (mode) {
                                       case GameMode.NORMAL:
