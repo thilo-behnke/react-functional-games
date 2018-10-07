@@ -2,17 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d740ea6c-b3c6-4640-b95e-e74ea5d105c4" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/SelectGame.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componentsBreakout/Ball.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componentsBreakout/BreakoutApp.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componentsBreakout/BreakoutApp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componentsBreakout/BreakoutAppUtils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BricksApp.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameArea.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameArea.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GeneralUtils.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeneralUtils.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Block.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GameArea.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameArea.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GameArea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameArea.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GameAreaUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameAreaUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Animations.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/Animations.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Block.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/Block.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Block.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/Block.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameArea.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/GameArea.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameArea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/GameArea.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameAreaUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/GameAreaUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GeneralUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/GeneralUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Output.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/Output.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Score.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/Score.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Score.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/Score.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ScoreCalc.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/ScoreCalc.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SetBridge.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/SetBridge.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SetBridge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/SetBridge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Turns.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/Turns.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/componentsBricks/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -68,11 +85,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <file leaf-file-name="BricksApp.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BricksApp.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="33" column="50" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="50" />
+            <state relative-caret-position="799">
+              <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -81,21 +98,21 @@
         </entry>
       </file>
       <file leaf-file-name="constants.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/constants.ts">
+        <entry file="file://$PROJECT_DIR$/src/componentsBricks/constants.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="31" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="31" />
+              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameAreaUtils.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/GameAreaUtils.ts">
+      <file leaf-file-name="GameAreaUtils.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/componentsBricks/GameAreaUtils.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+            <state relative-caret-position="459">
+              <caret line="50" column="20" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="20" />
               <folding>
-                <element signature="e#0#60#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,8 +121,8 @@
       <file leaf-file-name="GameArea.test.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameArea.test.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="163" column="57" selection-start-line="163" selection-start-column="57" selection-end-line="163" selection-end-column="57" />
+            <state relative-caret-position="629">
+              <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
               <folding>
                 <element signature="e#0#71#0" expanded="true" />
               </folding>
@@ -113,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameArea.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/GameArea.tsx">
+      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="76" column="63" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="69" />
+            <state relative-caret-position="34">
+              <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -125,11 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Block.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Block.tsx">
+      <file leaf-file-name="SelectGame.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SelectGame.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="170">
+              <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -137,11 +154,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameArea.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/GameArea.css">
+      <file leaf-file-name="BreakoutApp.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/componentsBreakout/BreakoutApp.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <state relative-caret-position="464">
+              <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ball.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/componentsBreakout/Ball.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BreakoutAppUtils.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/componentsBreakout/BreakoutAppUtils.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BreakoutApp.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/componentsBreakout/BreakoutApp.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -159,7 +209,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>calcScore</find>
       <find>GRID</find>
       <find>empty list</find>
       <find>console.log</find>
@@ -189,14 +238,15 @@
       <find>bygaps</find>
       <find>map</find>
       <find>slice</find>
+      <find>getNeighbours</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/components/GameArea.tsx" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/GameAreaUtils.ts" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/componentsBricks/GameArea.tsx" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/componentsBricks/GameAreaUtils.ts" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/GameArea.test.tsx" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -231,14 +281,26 @@
         <option value="$PROJECT_DIR$/src/components/Button.tsx" />
         <option value="$PROJECT_DIR$/src/components/Score.tsx" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/constants.ts" />
         <option value="$PROJECT_DIR$/src/GeneralUtils.test.ts" />
         <option value="$PROJECT_DIR$/src/components/GameArea.css" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/components/GameArea.tsx" />
         <option value="$PROJECT_DIR$/src/components/Block.tsx" />
-        <option value="$PROJECT_DIR$/src/GameArea.test.tsx" />
+        <option value="$PROJECT_DIR$/src/components/constants.ts" />
         <option value="$PROJECT_DIR$/src/components/GameAreaUtils.ts" />
+        <option value="$PROJECT_DIR$/src/GameArea.test.tsx" />
+        <option value="$PROJECT_DIR$/src/SelectGame.tsx.ts" />
+        <option value="$PROJECT_DIR$/src/BricksApp.tsx" />
+        <option value="$PROJECT_DIR$/src/index.tsx" />
+        <option value="$PROJECT_DIR$/src/componentsBreakout/TetrisApp.ts" />
+        <option value="$PROJECT_DIR$/src/componentsBreakout/TetrisApp.tsx" />
+        <option value="$PROJECT_DIR$/src/SelectGame.tsx" />
+        <option value="$PROJECT_DIR$/src/componentsBreakout/BreakoutApp.css" />
+        <option value="$PROJECT_DIR$/src/componentsBreakout/BreakoutAppUtils.ts" />
+        <option value="$PROJECT_DIR$/src/componentsBricks/GameAreaUtils.ts" />
+        <option value="$PROJECT_DIR$/src/componentsBreakout/Ball.ts" />
+        <option value="$PROJECT_DIR$/src/componentsBreakout/Ball.tsx" />
+        <option value="$PROJECT_DIR$/src/componentsBreakout/BreakoutApp.tsx" />
       </list>
     </option>
   </component>
@@ -269,7 +331,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,15 +343,28 @@
               <item name="css-games" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="css-games" type="b2602c69:ProjectViewProjectNode" />
+              <item name="css-games" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="componentsBreakout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="css-games" type="b2602c69:ProjectViewProjectNode" />
+              <item name="css-games" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="componentsBricks" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jest.config.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../breakout" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts-ts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
@@ -381,7 +455,10 @@
       <workItem from="1537548998351" duration="6271000" />
       <workItem from="1537644968498" duration="5579000" />
       <workItem from="1537696236605" duration="14722000" />
-      <workItem from="1537725069824" duration="10884000" />
+      <workItem from="1537725069824" duration="11111000" />
+      <workItem from="1537905259849" duration="488000" />
+      <workItem from="1537908309649" duration="4717000" />
+      <workItem from="1538388287426" duration="259000" />
     </task>
     <servers />
   </component>
@@ -397,23 +474,21 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109753000" />
+    <option name="totallyTimeSpent" value="115444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.47276688" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33877996" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32897604" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Bucklescript" order="8" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
@@ -423,6 +498,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,76 +518,28 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Block.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameArea.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2227">
-          <caret line="131" column="2" selection-start-line="131" selection-start-column="2" selection-end-line="131" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameArea.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ScoreCalc.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Block.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Score.tsx">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Score.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="20" lean-forward="true" selection-end-line="3" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/constants.ts">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/constants.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameAreaUtils.ts">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/GameAreaUtils.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Block.css">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Block.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
@@ -525,7 +553,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameArea.tsx">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/GameArea.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="40" column="63" lean-forward="true" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
@@ -535,21 +563,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameAreaUtils.ts">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/GameAreaUtils.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="44" column="37" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Block.css">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Block.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameArea.tsx">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/GameArea.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="36" column="62" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="62" />
@@ -573,7 +601,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameAreaUtils.ts">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/GameAreaUtils.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
           <caret line="89" column="17" lean-forward="true" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
@@ -625,24 +653,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Block.css">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Block.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SetBridge.tsx">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/SetBridge.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SetBridge.css">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/SetBridge.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
@@ -663,55 +688,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Animations.css">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Animations.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Score.css">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Score.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Turns.tsx">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Turns.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="64" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GeneralUtils.ts">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/GeneralUtils.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Button.tsx">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Button.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ScoreCalc.tsx">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/ScoreCalc.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Score.tsx">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Score.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -729,7 +751,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Output.tsx">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Output.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="84" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
@@ -743,30 +765,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/constants.ts">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/Block.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="33" column="50" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Block.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="153">
           <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -777,9 +779,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameArea.tsx">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/GameArea.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
+        <state relative-caret-position="204">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/constants.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/GameArea.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
           <caret line="76" column="63" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="69" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -787,29 +803,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameArea.css">
+    <entry file="file://$PROJECT_DIR$/src/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state relative-caret-position="34">
+          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BricksApp.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/componentsBreakout/BreakoutApp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/componentsBreakout/BreakoutAppUtils.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameArea.test.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="163" column="57" selection-start-line="163" selection-start-column="57" selection-end-line="163" selection-end-column="57" />
+        <state relative-caret-position="629">
+          <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
           <folding>
             <element signature="e#0#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GameAreaUtils.ts">
+    <entry file="file://$PROJECT_DIR$/src/componentsBricks/GameAreaUtils.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+        <state relative-caret-position="459">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="20" />
           <folding>
-            <element signature="e#0#60#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SelectGame.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/componentsBreakout/Ball.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/componentsBreakout/BreakoutApp.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>

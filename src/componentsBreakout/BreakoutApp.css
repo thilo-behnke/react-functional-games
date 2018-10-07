@@ -1,0 +1,11 @@
+
+.PlayField {
+    display: grid;
+    grid-template-rows: repeat(80, 0.5em);
+    grid-template-columns: repeat(200, 0.5em);
+    border: 1px solid black;
+}
+
+.Tile {
+    background-color: yellow;
+}

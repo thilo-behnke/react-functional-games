@@ -5,14 +5,14 @@ import {
     findGaps,
     findGapsRange,
     getAdjacent,
-    getGrid,
+    getQuadraticGrid,
     getMinY,
     getNeighbours, initGameField,
     mapPosY
-} from './components/GameAreaUtils';
+} from './componentsBricks/GameAreaUtils';
 import * as _ from 'lodash';
 import { stub } from 'sinon';
-import { Color, GameBlock, GameField } from './components/constants';
+import { Color, GameBlock, GameField } from './componentsBricks/constants';
 
 const simpleGameField = (size: number) => pipe(
     range,
@@ -49,8 +49,8 @@ test('mapY', () => {
         .toEqual([1, 2])
 })
 
-test('getGrid', () => {
-    const grid = getGrid(2)
+test('getQuadraticGrid', () => {
+    const grid = getQuadraticGrid(2)
     expect(grid).toEqual([[1, 1], [1, 2], [2, 1], [2, 2]].map(pos => ({pos})))
 })
 

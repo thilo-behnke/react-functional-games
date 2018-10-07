@@ -1,15 +1,11 @@
-import { chain, differenceBy, random, range } from 'lodash';
+import { random, range } from 'lodash';
 import {
     concat,
-    constant,
     curry,
     curryRight,
-    differenceBy as fdifferenceBy,
-    fill,
     filter,
     flatMap,
     flatten,
-    fromPairs,
     groupBy,
     head,
     map,
@@ -19,16 +15,15 @@ import {
     slice,
     sortBy,
     sortedUniqBy,
-    tap,
-    times,
-    toPairs, uniqBy,
+    toPairs,
+    uniqBy,
     zip
 } from 'lodash/fp';
-import { compose, differenceWith, inc, repeat, pipe as rpipe } from 'ramda';
-
-const reduce = require('lodash/fp/reduce').convert({'cap': false});
+import { compose, differenceWith, either, repeat, xprod } from 'ramda';
 import { Color, GameBlock, GameField } from './constants';
 import { formatNumber } from './GeneralUtils';
+
+const reduce = require('lodash/fp/reduce').convert({'cap': false});
 
 export const formatNumberD = curryRight(formatNumber)('.')
 
@@ -45,7 +40,7 @@ export const initGameField = (fieldRows: number, fieldColumns: number) =>
         }))
     )(range(1, fieldRows * fieldColumns))
 
-export const getGrid = (fieldRows: number): Array<{ pos: [number, number] }> => {
+export const getQuadraticGrid = (fieldRows: number): Array<{ pos: [number, number] }> => {
     const cells = range(1, fieldRows + 1)
     return pipe(
         flatMap((x: number) => cells.map((y: number) => [x, y] as [number, number])),
@@ -53,11 +48,20 @@ export const getGrid = (fieldRows: number): Array<{ pos: [number, number] }> => 
     )(cells)
 }
 
+export const getGrid = (fieldRows: number, fieldColumns: number): Array<[number, number]> =>
+    xprod(range(1, fieldRows + 1), range(1, fieldColumns + 1)) as Array<[number, number]>
+
 export const mapPosY = map(({pos: [_, posY]}) => posY)
 
+const isNeighbourY = curry(
+    ({pos: [x, y]}: GameBlock, {pos: [posX, posY]}: GameBlock) => posX === x && Math.abs(posY - y) === 1
+)
+const isNeighbourX = curry(
+    ({pos: [x, y]}: GameBlock, {pos: [posX, posY]}: GameBlock) => posY === y && Math.abs(posX - x) === 1
+)
+
 export const getNeighbours = curry(
-    ({pos: [x, y]}: GameBlock, blocks: GameField) =>
-        blocks.filter(({pos: [posX, posY]}) => posX === x && Math.abs(posY - y) === 1 || posY === y && Math.abs(posX - x) === 1)
+    (block: GameBlock, blocks: GameField): GameField => blocks.filter(either(isNeighbourX(block), isNeighbourY(block)))
 )
 
 export const getAdjacent = (block: GameBlock, blocks: GameField): GameField => {
@@ -95,10 +99,10 @@ export const findGaps = (arr: number[]): number[] => {
     const gaps = pipe(
         sortBy(''),
         reduce((acc: number[], val: number, i: number, arr: number[]) =>
-            i !== 0 && Math.abs(arr[i - 1] - val) !== 1
-                ? [...acc, i]
-                : acc, []
-        )
+                i !== 0 && Math.abs(arr[i - 1] - val) !== 1
+                    ? [...acc, i]
+                    : acc
+            , [])
     )(arr) as number[]
     return arr.length ? [...gaps, arr.length] : []
 }

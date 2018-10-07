@@ -1,4 +1,4 @@
-import { formatNumber } from './components/GeneralUtils';
+import { formatNumber } from './componentsBricks/GeneralUtils';
 
 test('formatNumber', () => {
     const num = 1000000
