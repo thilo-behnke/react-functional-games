@@ -1,18 +1,17 @@
 import "./index.css";
 
 import { Provider } from "react-redux";
-import { applyMiddleware, createStore } from "redux";
+import { createStore } from 'redux';
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import createSagaMiddleware from "redux-saga";
 
 import { SelectGame } from "./SelectGame";
 import gameApp from "./reducers";
 import registerServiceWorker from "./registerServiceWorker";
 
-const sagaMiddleware = createSagaMiddleware();
-
-const store = createStore(gameApp, applyMiddleware(sagaMiddleware));
+/* const sagaMiddleware = createSagaMiddleware();
+ *  */
+const store = createStore(gameApp);
 
 ReactDOM.render(
   <Provider store={store}>
