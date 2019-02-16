@@ -1,17 +1,19 @@
-import * as React from 'react';
+import './GameArea.css';
+
 import { differenceBy, without } from 'lodash';
 import { map, pipe } from 'lodash/fp';
-import './GameArea.css';
+import * as React from 'react';
+
+import { Color, GameField, GameMode } from './constants';
 import {
-    calcMultiplier,
-    calcRemove,
-    calcScore,
-    groupByGaps,
-    initGameField,
-    recalculatePositions
+  calcMultiplier,
+  calcRemove,
+  calcScore,
+  groupByGaps,
+  recalculatePositions
 } from './GameAreaUtils';
-import { Color, FIELD_ROWS, GameField, GameMode } from './constants';
 import Block from './Block';
+import score from './Score';
 
 export interface GameAreaProps {
     enabled: boolean,

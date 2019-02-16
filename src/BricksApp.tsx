@@ -1,13 +1,14 @@
 import * as React from 'react';
+
+import { Button } from './componentsBricks/Button';
+import { FIELD_COLUMNS, FIELD_ROWS, GameField, GameMode, GameState } from './componentsBricks/constants';
+import { Output } from './componentsBricks/Output';
+import { Turns } from './componentsBricks/Turns';
+import { initGameField } from './componentsBricks/GameAreaUtils';
 import GameArea from './componentsBricks/GameArea';
 import Score from './componentsBricks/Score';
 import ScoreCalc from './componentsBricks/ScoreCalc';
 import SetBridge from './componentsBricks/SetBridge';
-import { FIELD_COLUMNS, FIELD_ROWS, GameField, GameMode, GameState } from './componentsBricks/constants';
-import { Turns } from './componentsBricks/Turns';
-import { Output } from './componentsBricks/Output';
-import { Button } from './componentsBricks/Button';
-import { initGameField } from './componentsBricks/GameAreaUtils';
 
 export type AppState = {
     score: number,

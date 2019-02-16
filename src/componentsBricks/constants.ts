@@ -1,5 +1,5 @@
 export const FIELD_ROWS = 20
-export const FIELD_COLUMNS = 80
+export const FIELD_COLUMNS = 20
 
 export enum Color {
     BLUE = 'blue',
