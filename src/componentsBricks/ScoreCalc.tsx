@@ -8,9 +8,10 @@ const ScoreCalc = ({
   tempScore: { score, multiplier }
 }: {
   tempScore: { score: number; multiplier: number };
-}) => (
-  <div className="PlusScore">{`+ ${formatNumberD(
-    score
-  )} points! x${formatNumberD(multiplier)}`}</div>
-);
+}) =>
+  !!(score && multiplier) && (
+    <div className="PlusScore">{`+ ${formatNumberD(
+      score
+    )} points! x${formatNumberD(multiplier)}`}</div>
+  );
 export default ScoreCalc;

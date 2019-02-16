@@ -76,6 +76,7 @@ const reducer = (state: GameAppState = initialState, action: any) => {
         score: state.score + action.payload.score
       };
     case GameActions.SET_GAME_FIELD:
+      console.log(state.field);
       return {
         ...state,
         field: action.payload.field,
