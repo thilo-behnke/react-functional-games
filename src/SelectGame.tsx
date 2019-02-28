@@ -1,9 +1,10 @@
-import * as React from 'react';
 import './App.css';
 
-import logo from './logo.svg';
-import BricksApp from './BricksApp';
+import * as React from 'react';
+
 import { BreakoutApp } from './componentsBreakout/BreakoutApp';
+import BricksApp from './BricksApp';
+import logo from './logo.svg';
 
 export enum Game {
     BRICKS = 'BRICKS',
@@ -13,7 +14,7 @@ export enum Game {
 export class SelectGame extends React.Component<{}, {selected: Game}> {
     constructor(props: any){
         super(props)
-        this.state = {selected: Game.BREAKOUT}
+        this.state = {selected: Game.BRICKS}
     }
 
     render(){

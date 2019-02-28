@@ -1,11 +1,22 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import './index.css';
-import registerServiceWorker from './registerServiceWorker';
-import { SelectGame } from './SelectGame';
+import "./index.css";
+
+import { Provider } from "react-redux";
+import { createStore } from 'redux';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+
+import { SelectGame } from "./SelectGame";
+import gameApp from "./reducers";
+import registerServiceWorker from "./registerServiceWorker";
+
+/* const sagaMiddleware = createSagaMiddleware();
+ *  */
+const store = createStore(gameApp);
 
 ReactDOM.render(
-    <SelectGame/>,
-    document.getElementById('root') as HTMLElement
+  <Provider store={store}>
+    <SelectGame />
+  </Provider>,
+  document.getElementById("root") as HTMLElement
 );
 registerServiceWorker();
