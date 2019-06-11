@@ -13,11 +13,7 @@ jobs:
         language: node_js
         node_js: 12.2.0
         install: npm install
-        script: npm run test-coverage
-      - stage: Coverage
-        name: "Typescript"
-        language: node_js
-        node_js: 12.2.0
-        install: skip 
-        script: npm install codecov -g
+        scripts:
+          - npm install codecov -g
+          - npm run test-coverage
         after_success: codecov
