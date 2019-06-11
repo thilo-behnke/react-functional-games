@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/codecov/example-typescript/branch/master/graph/badge.svg)](https://codecov.io/gh/thilo-behnke/functional-games)
+
 This project was bootstrapped with [Create React BricksApp](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
