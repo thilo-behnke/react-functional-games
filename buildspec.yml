@@ -1,3 +1,5 @@
+version: 0.1
+
 phases:
   install:
     commands:
@@ -6,3 +8,8 @@ phases:
   build:
     commands:
       - npm run build
+
+artifacts:
+  files:
+    - build*/**
+  discard-paths: yes
