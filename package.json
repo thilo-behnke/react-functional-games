@@ -8,7 +8,7 @@
     "@types/react-redux": "^7.0.1",
     "@types/redux": "^3.6.0",
     "@types/sinon": "^5.0.7",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "ramda": "^0.25.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
